@@ -1,0 +1,9 @@
+[user]
+	email = hidekimatsumoto31@gmail.com
+	name = Hideki
+[push]
+	default = simple
+[alias]
+	co = checkout
+[core]
+	pager =
