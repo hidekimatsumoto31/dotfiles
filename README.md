@@ -1,11 +1,6 @@
-# README #
+### DOTFILES ###
 
-This README would normally document whatever steps are necessary to get your application up and running.
 
-### What is this repository for? ###
-
-dotfiles
-
-### How do I get set up? ###
+### Set up###
 
  * install neobundle at .vim/bundle/
