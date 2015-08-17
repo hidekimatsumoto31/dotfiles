@@ -89,6 +89,15 @@ alias drunb='docker-compose run web bash'
 alias drunsb='docker-compose run --service-ports web bash'
 alias start_dns='source ~/start_dns.sh'
 
+#alias for vagrant
+alias vu='vagrant up'
+alias vs='vagrant ssh'
+
+#alias for errors typed
+alias claer='clear'
+alias clera='clear'
+alias cleare='clear'
+
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
