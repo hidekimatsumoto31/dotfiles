@@ -58,6 +58,7 @@ NeoBundle 'vim-scripts/JavaScript-Indent'
 NeoBundle 'christoomey/vim-tmux-runner'
 NeoBundle 'janko-m/vim-test'
 NeoBundle 'ekalinin/Dockerfile.vim'
+NeoBundle 'digitaltoad/vim-jade'
 
 " ColorScheme
 NeoBundle 'csapprox'

@@ -101,3 +101,6 @@ fi
 export PATH="/usr/local/heroku/bin:$PATH"
 export PATH="/opt/android-sdk/tools:$PATH"
 export EDITOR=vim
+
+export NVM_DIR="/home/hideki/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
