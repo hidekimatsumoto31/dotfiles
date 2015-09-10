@@ -45,7 +45,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -97,6 +97,7 @@ alias vs='vagrant ssh'
 alias claer='clear'
 alias clera='clear'
 alias cleare='clear'
+alias cleaer='clear'
 
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
@@ -110,3 +111,6 @@ fi
 export PATH="/usr/local/heroku/bin:$PATH"
 export PATH="/opt/android-sdk/tools:$PATH"
 export EDITOR=vim
+
+export NVM_DIR="/home/hideki/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm

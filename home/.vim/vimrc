@@ -202,6 +202,9 @@ nnoremap <C-b> :e#<CR>
 nnoremap <leader>s :w<CR>
 inoremap <leader>s <Esc> :w<CR>
 
+nnoremap <leader>q :q<CR>
+inoremap <leader>q <Esc> :q<CR>
+
 nnoremap <leader>h :set hlsearch!<CR>
 
 nnoremap Q @q
