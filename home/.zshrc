@@ -98,6 +98,11 @@ alias claer='clear'
 alias clera='clear'
 alias cleare='clear'
 alias cleaer='clear'
+alias cleaer='clear'
+
+#alias for rails
+alias rs='rails s'
+alias rc='rails c'
 
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
