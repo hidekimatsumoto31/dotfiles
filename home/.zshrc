@@ -45,7 +45,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-syntax-highlighting)
+plugins=(git zsh-syntax-highlighting aws)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -78,6 +78,11 @@ alias tmux='TERM=screen-256color-bce tmux'
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+#alias docker
+alias drm='docker rm -f $(docker ps -qa)'
+
+#alias docker-compose
 alias dremove='docker-compose rm'
 alias dkill='docker-compose kill'
 alias dup='docker-compose up -d'
@@ -87,6 +92,9 @@ alias dlogs='docker-compose logs'
 alias drun='docker-compose run'
 alias drunb='docker-compose run web bash'
 alias drunsb='docker-compose run --service-ports web bash'
+alias drusnb='docker-compose run --service-ports web bash'
+
+#alias for start jwilder dns for local name server
 alias start_dns='source ~/start_dns.sh'
 
 #alias for vagrant
@@ -103,6 +111,10 @@ alias cleaer='clear'
 #alias for rails
 alias rs='rails s'
 alias rc='rails c'
+
+#alias for change credentials
+alias aws_credentials='vim ~/.aws/credentials'
+
 
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
