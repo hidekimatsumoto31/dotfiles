@@ -98,8 +98,9 @@ alias drusnb='docker-compose run --service-ports web bash'
 alias start_dns='source ~/start_dns.sh'
 
 #alias for vagrant
-alias vu='vagrant up'
-alias vs='vagrant ssh'
+alias vup='vagrant up'
+alias vssh='vagrant ssh'
+alias vhalt='vagrant halt'
 
 #alias for errors typed
 alias claer='clear'
@@ -114,7 +115,6 @@ alias rc='rails c'
 
 #alias for change credentials
 alias aws_credentials='vim ~/.aws/credentials'
-
 
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"

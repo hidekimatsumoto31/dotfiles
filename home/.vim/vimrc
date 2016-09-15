@@ -41,11 +41,14 @@ NeoBundle 'kien/ctrlp.vim'                "  Fuzzyfinder, yes vim has and has mo
 NeoBundle 'nelstrom/vim-textobj-rubyblock'
 NeoBundle 'othree/html5.vim'              "  Improves vim html5 syntax and indentation
 NeoBundle 'scrooloose/nerdtree'           "  A file explorer
-NeoBundle 'shougo/neocomplete.vim'
+" NeoBundle 'shougo/neocomplete.vim'      "  Old autocompletion plugin
 NeoBundle 'sirver/ultisnips'
 NeoBundle 'slim-template/vim-slim'
 NeoBundle 'terryma/vim-multiple-cursors'
 NeoBundle 'tomtom/tcomment_vim'           "  Comment like a boss
+NeoBundle 'tpope/vim-abolish'             "  For transform words, to uppercase, snakecase, camelcase, dash
+                                          "  crc to convert to fooBar,  crm to convert to FooBar,  cr_ or crs to convert to foo_bar, cru to convert to FOO_BAR, cr- to convert to foo-bar
+
 NeoBundle 'tpope/vim-endwise'             "  If you miss IDE features like block closing
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'tpope/vim-rails'               "  If you use these plugins correctly you'll never
@@ -62,6 +65,8 @@ NeoBundle 'ekalinin/Dockerfile.vim'
 NeoBundle 'digitaltoad/vim-jade'
 NeoBundle 'rking/ag.vim'
 NeoBundle 'bling/vim-airline'
+NeoBundle 'junegunn/gv.vim'
+NeoBundle 'valloric/youcompleteme', {'build': {'unix': './install.py --tern-completer --clang-completer'}}
 
 
 " ColorScheme
@@ -221,18 +226,14 @@ noremap <silent> <leader>ta :TestSuite<CR>
 noremap <silent> <leader>tl :TestLast<CR>
 noremap <silent> <leader>tg :TestVisit<CR>
 
-" Buffer
-nnoremap <silent> [b :bprevious<CR>
-nnoremap <silent> ]b :bnext<CR>
-nnoremap <silent> [B :bfirst<CR>
-nnoremap <silent> ]B :blast<CR>
-
-
 " Panes and windows resizing
 """"""""""""""""""""""""""""
 " zoom a vim pane, <C-w>= to re-balance
 nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
 nnoremap <leader>= :wincmd =<cr>
+
+" edit vimrc
+nnoremap <leader>e :e $MYVIMRC<cr>
 
 " Allows to change to buffers using leader + number
 let g:airline#extensions#tabline#enabled = 1
@@ -295,3 +296,14 @@ au FileType markdown setlocal ts=4 sts=4 sw=4
 let g:VtrInitialCommand = 'drunb'
 let g:VtrOrientation = 'h'
 let g:VtrPercentage = 35
+
+" YouCompleteMe
+let g:ycm_collect_identifiers_from_tags_files = 1
+
+inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+function! s:my_cr_function()
+  " return neocomplete#close_popup() . "\<CR>"
+  " For no inserting <CR> key.
+  " return pumvisible() ? neocomplete#close_popup() : "\<CR>"
+  return pumvisible() ? "\<C-y> " : "\<CR>"
+endfunction

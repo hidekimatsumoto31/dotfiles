@@ -5,5 +5,8 @@
 	default = simple
 [alias]
 	co = checkout
+	ctags = !.git/hooks/ctags
 [core]
 	pager =
+[init]
+	templatedir = /home/hideki/.git_template
