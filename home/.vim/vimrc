@@ -68,6 +68,7 @@ NeoBundle 'bling/vim-airline'
 NeoBundle 'junegunn/gv.vim'
 NeoBundle 'valloric/youcompleteme', {'build': {'unix': './install.py --tern-completer --clang-completer'}}
 
+NeoBundle 'scrooloose/syntastic'        " Syntax checking
 
 " ColorScheme
 NeoBundle 'csapprox'
@@ -184,7 +185,6 @@ inoremap jk <esc>
 " ,c toggles comment (Tcomment)
 nmap <silent> <leader>c :TComment<CR>
 vmap <silent> <leader>c :TComment<CR>
-
 " Move lines or chunks of lines up and down
 " Bubble single lines
 nmap <C-Up> [e
@@ -213,6 +213,8 @@ nnoremap <leader>q :q<CR>
 inoremap <leader>q <Esc> :q<CR>
 
 nnoremap <leader>h :set hlsearch!<CR>
+
+nnoremap <leader>t :set cursorline! <CR> <bar> :set cursorcolumn!<CR>
 
 nnoremap Q @q
 vnoremap Q :normal @q<cr>
@@ -307,3 +309,13 @@ function! s:my_cr_function()
   " return pumvisible() ? neocomplete#close_popup() : "\<CR>"
   return pumvisible() ? "\<C-y> " : "\<CR>"
 endfunction
+
+let g:syntastic_ruby_checkers = ["mri", "rubocop"]
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 0
+let g:syntastic_mode_map = {
+     \ "mode": "passive",
+     \ "active_filetypes": [],
+     \ "passive_filetypes": [] }
+
+nnoremap <leader>l :SyntasticCheck<CR>

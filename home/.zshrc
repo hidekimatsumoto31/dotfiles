@@ -108,6 +108,11 @@ alias clera='clear'
 alias cleare='clear'
 alias cleaer='clear'
 alias cleaer='clear'
+alias cçaer='clear'
+alias cçera='clear'
+alias cçeare='clear'
+alias cçeaer='clear'
+alias cçeaer='clear'
 
 #alias for rails
 alias rs='rails s'
@@ -131,3 +136,8 @@ export EDITOR=vim
 
 export NVM_DIR="/home/hideki/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+#android
+export ANDROID_HOME=~/Android/Sdk
+export PATH=${PATH}:${ANDROID_HOME}/tools
+export PATH=${PATH}:${ANDROID_HOME}/platform-tools
