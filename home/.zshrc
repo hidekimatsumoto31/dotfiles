@@ -45,7 +45,14 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-syntax-highlighting aws)
+plugins=(
+  autojump
+  aws
+  docker
+  docker-compose
+  git
+  zsh-syntax-highlighting
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -81,26 +88,14 @@ alias tmux='TERM=screen-256color-bce tmux'
 
 #alias docker
 alias drm='docker rm -f $(docker ps -qa)'
+alias drmi='docker rmi -f $(docker ps -qa)'
 
 #alias docker-compose
-alias dremove='docker-compose rm'
-alias dkill='docker-compose kill'
-alias dup='docker-compose up -d'
-alias dps='docker-compose ps'
-alias dc='docker-compose'
-alias dlogs='docker-compose logs'
-alias drun='docker-compose run'
-alias drunb='docker-compose run web bash'
+alias dcup='docker-compose up'
 alias drunsb='docker-compose run --service-ports web bash'
-alias drusnb='docker-compose run --service-ports web bash'
 
 #alias for start jwilder dns for local name server
 alias start_dns='source ~/start_dns.sh'
-
-#alias for vagrant
-alias vup='vagrant up'
-alias vssh='vagrant ssh'
-alias vhalt='vagrant halt'
 
 #alias for errors typed
 alias claer='clear'
@@ -141,3 +136,5 @@ export NVM_DIR="/home/hideki/.nvm"
 export ANDROID_HOME=~/Android/Sdk
 export PATH=${PATH}:${ANDROID_HOME}/tools
 export PATH=${PATH}:${ANDROID_HOME}/platform-tools
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

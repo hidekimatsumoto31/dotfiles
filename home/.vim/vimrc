@@ -1,8 +1,8 @@
-" vimrc sugerido - colocar em .vim/vimrc
 " Instalar o NeoBundle antes, seguindo os passos abaixo
-" A primeira vez que executar o vim depois de instalar o neobundle e
+" vimrc sugerido - colocar em .vim/vimrc
 " colocar o vimrc no local correto o NeoBundle confirmarÃ¡ a instalaÃ§Ã£o
 " dos plugins.
+" A primeira vez que executar o vim depois de instalar o neobundle e
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Instalação do NeoBundle
@@ -23,61 +23,10 @@ endif
 call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
-""""""""""""""
-" Plugins list
-""""""""""""""
-NeoBundle 'AndrewRadev/splitjoin.vim'
-NeoBundle 'AndrewRadev/switch.vim'
-NeoBundle 'breuckelen/vim-resize'
-NeoBundle 'christoomey/vim-tmux-navigator'
-NeoBundle 'drslump/vim-syntax-js'         "  Improves vim js syntax and indentation
-NeoBundle 'gundo'                         "  Gundo - Undo, in small pieces
-NeoBundle 'henrik/vim-indexed-search'
-NeoBundle 'honza/vim-snippets'            "  The best snippet engine you'll ever need
-NeoBundle 'jiangmiao/auto-pairs'          "  If you miss IDE features like character closing
-NeoBundle 'kana/vim-textobj-user'
-NeoBundle 'kchmck/vim-coffee-script'
-NeoBundle 'kien/ctrlp.vim'                "  Fuzzyfinder, yes vim has and has more than one
-NeoBundle 'nelstrom/vim-textobj-rubyblock'
-NeoBundle 'othree/html5.vim'              "  Improves vim html5 syntax and indentation
-NeoBundle 'scrooloose/nerdtree'           "  A file explorer
-" NeoBundle 'shougo/neocomplete.vim'      "  Old autocompletion plugin
-NeoBundle 'sirver/ultisnips'
-NeoBundle 'slim-template/vim-slim'
-NeoBundle 'terryma/vim-multiple-cursors'
-NeoBundle 'tomtom/tcomment_vim'           "  Comment like a boss
-NeoBundle 'tpope/vim-abolish'             "  For transform words, to uppercase, snakecase, camelcase, dash
-                                          "  crc to convert to fooBar,  crm to convert to FooBar,  cr_ or crs to convert to foo_bar, cru to convert to FOO_BAR, cr- to convert to foo-bar
-
-NeoBundle 'tpope/vim-endwise'             "  If you miss IDE features like block closing
-NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'tpope/vim-rails'               "  If you use these plugins correctly you'll never
-NeoBundle 'tpope/vim-repeat'
-NeoBundle 'tpope/vim-surround'            "  Ease surrounding
-NeoBundle 'tpope/vim-unimpaired'
-NeoBundle 'tpope/vim-ragtag'
-NeoBundle 'tpope/vim-rsi'                 " readline key binding
-NeoBundle 'vim-ruby/vim-ruby'             "  look for an IDE again
-NeoBundle 'vim-scripts/JavaScript-Indent'
-NeoBundle 'christoomey/vim-tmux-runner'
-NeoBundle 'janko-m/vim-test'
-NeoBundle 'ekalinin/Dockerfile.vim'
-NeoBundle 'digitaltoad/vim-jade'
-NeoBundle 'rking/ag.vim'
-NeoBundle 'bling/vim-airline'
-NeoBundle 'junegunn/gv.vim'
-NeoBundle 'valloric/youcompleteme', {'build': {'unix': './install.py --tern-completer --clang-completer'}}
-
-NeoBundle 'scrooloose/syntastic'        " Syntax checking
-
-" ColorScheme
-NeoBundle 'csapprox'
-NeoBundle 'nanotech/jellybeans.vim'
-NeoBundle 'vim-scripts/Wombat'
-NeoBundle 'vim-scripts/Railscasts-Theme-GUIand256color'
-NeoBundle 'vim-scripts/wombat256.vim'
-NeoBundle 'henrik/vim-qargs'
-NeoBundle 'joonty/vdebug'
+" Vimscripts {{{
+source ~/.vim/bundles.vim
+source ~/.vim/keymaps.vim
+" }}}
 
 call neobundle#end()
 filetype plugin indent on " required
@@ -107,15 +56,22 @@ set nrformats=alpha " Increases/Decreases numbers with Ctrl-a/Ctrl-x correctrly
 set showcmd         " Show what command is being typed at the right corner
 set ruler           " Show the cursor position all the time
 set enc=utf-8       " UTF-8 encoding, by default
+set modeline " Load modelines when file opens, i.e.: # vim: set ts=2 :
+             " http://vim.wikia.com/wiki/Modeline_magic
 
+
+"infinite undos(even once closed file)"
+"""""""""""""""""""""""""""""""""""""""""""""""""""
 if !isdirectory('~/tmp/vim') | silent execute '!rm -f ~/tmp/vim; mkdir -p ~/tmp/vim' | endif
 set directory=~/tmp/vim//
 set undofile
 set undolevels=1000
 set undoreload=10000
 set undodir=~/.vim/tmp/undo//
+"""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " CSApprox, for emulating gvim colors on the terminal
+"""""""""""""""""""""""""""""""""""""""""""""""""""
 if !has('gui_running') && exists(':CSApprox')
  CSApprox
 endif
@@ -132,14 +88,15 @@ if &term =~ '^screen'
    execute "set <xRight>=\e[1;*C"
    execute "set <xLeft>=\e[1;*D"
 endif
+"""""""""""""""""""""""""""""""""""""""""""""""""""
 
-set modeline " Load modelines when file opens, i.e.: # vim: set ts=2 :
-             " http://vim.wikia.com/wiki/Modeline_magic
-
+"Removing trailing whitespace
+"""""""""""""""""""""""""""""""""""""""""""""""""""
 augroup BeforeExit
   autocmd!
   autocmd BufWritePre * :%s/\s\+$//e "Automatically removes all trailing whitespace
 augroup end
+"""""""""""""""""""""""""""""""""""""""""""""""""""
 
 runtime macros/matchit.vim " match the opening/closing html tag when pressing '%'
 
@@ -166,95 +123,6 @@ endif
 set background=dark
 colorscheme jellybeans
 
-""""""""""""""""
-" Custom keymaps
-""""""""""""""""
-" Toggle NERDTree
-nnoremap <C-n> :NERDTreeToggle<CR>
-
-" Ctrl-t opens the TaskList inside a file
-map <C-t> <Plug>TaskList
-
-" Ctrl-g opens Gundo
-map <C-g> :GundoToggle<CR>
-
-" Map jk to always advance a screen line
-nnoremap j gj
-nnoremap k gk
-
-inoremap jk <esc>
-" ,c toggles comment (Tcomment)
-nmap <silent> <leader>c :TComment<CR>
-vmap <silent> <leader>c :TComment<CR>
-" Move lines or chunks of lines up and down
-" Bubble single lines
-nmap <C-Up> [e
-nmap <C-Down> ]e
-
-" Bubble multiple lines
-vmap <C-Up> [egv
-vmap <C-Down> ]egv
-
-" Ctrl J/K add blank lines above and below
-nnoremap <C-J> m`o<Esc>``
-nnoremap <C-K> m`O<Esc>``
-
-"Make arrows to do nothing
-nnoremap <Up> <NOP>
-nnoremap <Down> <NOP>
-nnoremap <Left> <NOP>
-nnoremap <Right> <NOP>
-
-nnoremap <C-b> :e#<CR>
-
-nnoremap <leader>s :w<CR>
-inoremap <leader>s <Esc> :w<CR>
-
-nnoremap <leader>q :q<CR>
-inoremap <leader>q <Esc> :q<CR>
-
-nnoremap <leader>h :set hlsearch!<CR>
-
-nnoremap <leader>t :set cursorline! <CR> <bar> :set cursorcolumn!<CR>
-
-nnoremap Q @q
-vnoremap Q :normal @q<cr>
-
-imap ,/ </<C-X><C-O>
-
-" Run tests from Vim
-noremap <silent> <leader>tn :TestNearest<CR>
-noremap <silent> <leader>tf :TestFile<CR>
-noremap <silent> <leader>ta :TestSuite<CR>
-noremap <silent> <leader>tl :TestLast<CR>
-noremap <silent> <leader>tg :TestVisit<CR>
-
-" finding file in tree
-nnoremap <leader>f :NERDTreeFind<CR>
-
-
-" Panes and windows resizing
-""""""""""""""""""""""""""""
-" zoom a vim pane, <C-w>= to re-balance
-nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
-nnoremap <leader>= :wincmd =<cr>
-
-" edit vimrc
-nnoremap <leader>e :e $MYVIMRC<cr>
-
-" Allows to change to buffers using leader + number
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#buffer_idx_mode = 1
-nmap <leader>1 <Plug>AirlineSelectTab1
-nmap <leader>2 <Plug>AirlineSelectTab2
-nmap <leader>3 <Plug>AirlineSelectTab3
-nmap <leader>4 <Plug>AirlineSelectTab4
-nmap <leader>5 <Plug>AirlineSelectTab5
-nmap <leader>6 <Plug>AirlineSelectTab6
-nmap <leader>7 <Plug>AirlineSelectTab7
-nmap <leader>8 <Plug>AirlineSelectTab8
-nmap <leader>9 <Plug>AirlineSelectTab9
-
 " Set ultisnips triggers
 let g:UltiSnipsExpandTrigger="<Tab>"
 let g:UltiSnipsJumpForwardTrigger="<Tab>"
@@ -266,7 +134,6 @@ let g:multi_cursor_next_key='<C-d>'
 
 " Vim test
 let g:test#strategy = "vtr"
-
 
 """"""""""""""""""""
 " Custom status line
@@ -290,15 +157,6 @@ set statusline+=\ %P                            " percent through file
 au BufRead,BufNewFile *.md set filetype=markdown
 au FileType markdown setlocal ts=4 sts=4 sw=4
 
-""""""""
-" Dica "
-""""""""
-" Como ver quais sÃ£o as teclas mapeadas no vim:
-" :nmap for normal mode mappings
-" :vmap for visual mode mappings
-" :imap for insert mode mappings
-" :mkexrc Write current key mappings and changed options to [file]
-
 " VTR
 let g:VtrInitialCommand = 'drunb'
 let g:VtrOrientation = 'h'
@@ -315,15 +173,23 @@ function! s:my_cr_function()
   return pumvisible() ? "\<C-y> " : "\<CR>"
 endfunction
 
-let g:syntastic_ruby_checkers = ["mri", "rubocop"]
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
-let g:syntastic_mode_map = {
-     \ "mode": "passive",
-     \ "active_filetypes": [],
-     \ "passive_filetypes": [] }
+let g:ale_sign_error = '>>'
+let g:ale_sign_warning = '--'
+let g:ale_echo_msg_error_str = 'E'
+let g:ale_echo_msg_warning_str = 'W'
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+let g:ale_lint_on_save = 1
+let g:ale_javascript_eslint_use_global = 0
 
-nnoremap <leader>l :SyntasticCheck<CR>
+" let g:syntastic_ruby_checkers = ["mri", "rubocop"]
+" let g:syntastic_check_on_open = 0
+" let g:syntastic_check_on_wq = 0
+" let g:syntastic_mode_map = {
+"      \ "mode": "passive",
+"      \ "active_filetypes": [],
+"      \ "passive_filetypes": [] }
+"
+" nnoremap <leader>l :SyntasticCheck<CR>
 
 " Vim Debug {{{
 let g:vdebug_options = {
@@ -332,3 +198,17 @@ let g:vdebug_options = {
      \ }
      \ }
 " }}}
+"
+" Gundo to use python 3
+let g:gundo_prefer_python3 = 1
+
+""""""""""""""""""""""""""""""""""""""""""
+""vim-tmux-navigator""
+let g:tmux_navigator_no_mappings = 1
+
+map <silent> <C-Left>  :TmuxNavigateLeft<cr>
+map <silent> <C-Down>  :TmuxNavigateDown<cr>
+map <silent> <C-Up>    :TmuxNavigateUp<cr>
+map <silent> <C-Right> :TmuxNavigateRight<cr>
+
+""""""""""""""""""""""""""""""""""""""""""
