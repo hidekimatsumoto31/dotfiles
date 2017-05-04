@@ -32,7 +32,6 @@ NeoBundle 'tpope/vim-rsi'                 " readline key binding
 NeoBundle 'vim-ruby/vim-ruby'             "  look for an IDE again
 NeoBundle 'christoomey/vim-tmux-runner'
 NeoBundle 'janko-m/vim-test'
-NeoBundle 'ekalinin/Dockerfile.vim'
 NeoBundle 'digitaltoad/vim-jade'
 NeoBundle 'rking/ag.vim'
 NeoBundle 'bling/vim-airline'
@@ -41,6 +40,7 @@ NeoBundle 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 NeoBundle 'valloric/youcompleteme', {'build': {'unix': './install.py --tern-completer --clang-completer'}}
 NeoBundle 'w0rp/ale'                      " lint check
 NeoBundle 'chemzqm/vim-jsx-improve'
+NeoBundle 'joonty/vdebug'
 
 " ColorScheme
 NeoBundle 'csapprox'
@@ -49,4 +49,3 @@ NeoBundle 'vim-scripts/Wombat'
 NeoBundle 'vim-scripts/Railscasts-Theme-GUIand256color'
 NeoBundle 'vim-scripts/wombat256.vim'
 NeoBundle 'henrik/vim-qargs'
-NeoBundle 'joonty/vdebug'

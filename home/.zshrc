@@ -92,6 +92,7 @@ alias drmi='docker rmi -f $(docker ps -qa)'
 
 #alias docker-compose
 alias dcup='docker-compose up'
+alias dcrun='docker-compose run'
 alias drunsb='docker-compose run --service-ports web bash'
 
 #alias for start jwilder dns for local name server

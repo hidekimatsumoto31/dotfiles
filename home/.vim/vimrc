@@ -56,9 +56,9 @@ set nrformats=alpha " Increases/Decreases numbers with Ctrl-a/Ctrl-x correctrly
 set showcmd         " Show what command is being typed at the right corner
 set ruler           " Show the cursor position all the time
 set enc=utf-8       " UTF-8 encoding, by default
-set modeline " Load modelines when file opens, i.e.: # vim: set ts=2 :
-             " http://vim.wikia.com/wiki/Modeline_magic
-
+set modeline        " Load modelines when file opens, i.e.: # vim: set ts=2 :
+                    " http://vim.wikia.com/wiki/Modeline_magic
+set relativenumber
 
 "infinite undos(even once closed file)"
 """""""""""""""""""""""""""""""""""""""""""""""""""
