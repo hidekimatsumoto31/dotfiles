@@ -1,11 +1,13 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
+# export TERM="xterm-256color"
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 ZSH_THEME="robbyrussell"
+# ZSH_THEME="powerlevel9k/powerlevel9k"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -89,6 +91,7 @@ alias tmux='TERM=screen-256color-bce tmux'
 #alias docker
 alias drm='docker rm -f $(docker ps -qa)'
 alias drmi='docker rmi -f $(docker ps -qa)'
+alias dps='docker ps'
 
 #alias docker-compose
 alias dcup='docker-compose up'
@@ -97,22 +100,6 @@ alias drunsb='docker-compose run --service-ports web bash'
 
 #alias for start jwilder dns for local name server
 alias start_dns='source ~/start_dns.sh'
-
-#alias for errors typed
-alias claer='clear'
-alias clera='clear'
-alias cleare='clear'
-alias cleaer='clear'
-alias cleaer='clear'
-alias cçaer='clear'
-alias cçera='clear'
-alias cçeare='clear'
-alias cçeaer='clear'
-alias cçeaer='clear'
-
-#alias for rails
-alias rs='rails s'
-alias rc='rails c'
 
 #alias for change credentials
 alias aws_credentials='vim ~/.aws/credentials'
@@ -138,4 +125,14 @@ export ANDROID_HOME=~/Android/Sdk
 export PATH=${PATH}:${ANDROID_HOME}/tools
 export PATH=${PATH}:${ANDROID_HOME}/platform-tools
 
+#fzf export to ignore
+export FZF_DEFAULT_COMMAND='ag -l -g ""'
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+#powerline custom
+# POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs)
+# POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(time)
+# POWERLEVEL9K_STATUS_VERBOSE=false
+# POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
+# POWERLEVEL9K_MODE='awesome-patched'

@@ -96,3 +96,11 @@ nmap <leader>9 <Plug>AirlineSelectTab9
 "FZF
 "
 nmap <C-p> :FZF<CR>
+
+
+" Move to end and beginning of line easyly
+nnoremap - ^
+nnoremap _ $
+
+vnoremap - ^
+vnoremap _ $

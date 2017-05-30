@@ -181,15 +181,13 @@ let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 let g:ale_lint_on_save = 1
 let g:ale_javascript_eslint_use_global = 0
 
-" let g:syntastic_ruby_checkers = ["mri", "rubocop"]
-" let g:syntastic_check_on_open = 0
-" let g:syntastic_check_on_wq = 0
-" let g:syntastic_mode_map = {
-"      \ "mode": "passive",
-"      \ "active_filetypes": [],
-"      \ "passive_filetypes": [] }
-"
-" nnoremap <leader>l :SyntasticCheck<CR>
+let g:syntastic_ruby_checkers = ["mri", "rubocop"]
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 0
+let g:syntastic_mode_map = {
+     \ "mode": "passive",
+     \ "active_filetypes": [],
+     \ "passive_filetypes": [] }
 
 " Vim Debug {{{
 let g:vdebug_options = {
@@ -212,3 +210,20 @@ map <silent> <C-Up>    :TmuxNavigateUp<cr>
 map <silent> <C-Right> :TmuxNavigateRight<cr>
 
 """"""""""""""""""""""""""""""""""""""""""
+"custom js color
+highlight javascriptVariable term=bold ctermfg=103 guifg=#8197bf
+highlight javascriptImport term=bold ctermfg=103 guifg=#8197bf
+highlight javascriptClassSuperName term=bold ctermfg=183 guifg=#8197bf
+highlight javascriptClassName term=bold ctermfg=183 guifg=#8197bf
+highlight javascriptConstant term=bold ctermfg=167 guifg=#cf6a4c
+highlight javascriptDebugger term=bold ctermfg=167 guifg=#cf6a4c
+
+highlight javascriptFuncName term=bold ctermfg=255 guifg=#eeeeee
+highlight javascriptMethodName term=bold ctermfg=255 guifg=#eeeeee
+highlight javascriptBrackets term=bold ctermfg=255 guifg=#eeeeee
+highlight javascriptBraces term=bold ctermfg=255 guifg=#eeeeee
+
+highlight javascriptObjectLiteral term=bold ctermfg=183 guifg=#8197bf
+highlight javascriptObjectLabelColon term=bold ctermfg=183 guifg=#8197bf
+
+highlight javascriptExport term=bold ctermfg=103 guifg=#8197bf
