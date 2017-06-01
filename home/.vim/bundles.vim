@@ -5,11 +5,9 @@
 NeoBundle 'AndrewRadev/splitjoin.vim'
 NeoBundle 'AndrewRadev/switch.vim'
 NeoBundle 'bling/vim-airline'
-NeoBundle 'breuckelen/vim-resize'
 NeoBundle 'christoomey/vim-tmux-navigator'
 NeoBundle 'christoomey/vim-tmux-runner'
 NeoBundle 'digitaltoad/vim-jade'
-" NeoBundle 'drslump/vim-syntax-js'         "  Improves vim js syntax and indentation
 NeoBundle 'othree/yajs.vim'
 NeoBundle 'henrik/vim-indexed-search'
 NeoBundle 'honza/vim-snippets'            "  The best snippet engine you'll ever need

@@ -124,7 +124,7 @@ set background=dark
 colorscheme jellybeans
 
 " Set ultisnips triggers
-let g:UltiSnipsExpandTrigger="<Tab>"
+let g:UltiSnipsExpandTrigger="<C-c>"
 let g:UltiSnipsJumpForwardTrigger="<Tab>"
 let g:UltiSnipsJumpBackwardTrigger="<S-Tab>""
 let g:UltiSnipsListSnippets="<C-k>"
@@ -203,11 +203,6 @@ let g:gundo_prefer_python3 = 1
 """"""""""""""""""""""""""""""""""""""""""
 ""vim-tmux-navigator""
 let g:tmux_navigator_no_mappings = 1
-
-map <silent> <C-Left>  :TmuxNavigateLeft<cr>
-map <silent> <C-Down>  :TmuxNavigateDown<cr>
-map <silent> <C-Up>    :TmuxNavigateUp<cr>
-map <silent> <C-Right> :TmuxNavigateRight<cr>
 
 """"""""""""""""""""""""""""""""""""""""""
 "custom js color

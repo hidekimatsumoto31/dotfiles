@@ -104,3 +104,18 @@ nnoremap _ $
 
 vnoremap - ^
 vnoremap _ $
+
+
+"Remap arrow keys to easily resize windows
+nnoremap <silent> <Right> :vertical res +2<CR>
+nnoremap <silent> <Left> :vertical res -2<CR>
+nnoremap <silent> <Up> :res +2<CR>
+nnoremap <silent> <Down> :res -2<CR>
+
+" Window Navigation
+map <silent> <C-Left>  :TmuxNavigateLeft<cr>
+map <silent> <C-Down>  :TmuxNavigateDown<cr>
+map <silent> <C-Up>    :TmuxNavigateUp<cr>
+map <silent> <C-Right> :TmuxNavigateRight<cr>
+
+nnoremap <silent> <BS> :TmuxNavigateLeft<cr>
