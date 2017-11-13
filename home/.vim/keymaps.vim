@@ -119,3 +119,6 @@ map <silent> <C-Up>    :TmuxNavigateUp<cr>
 map <silent> <C-Right> :TmuxNavigateRight<cr>
 
 nnoremap <silent> <BS> :TmuxNavigateLeft<cr>
+
+" Save sudo
+cmap w!! w !sudo tee > /dev/null %

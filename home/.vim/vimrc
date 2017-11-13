@@ -13,7 +13,7 @@
 
 set nocompatible
 filetype off
-let mapleader = ","
+let mapleader = ','
 
 " NeoBundle (plugin manager) config
 if has('vim_starting')
@@ -55,10 +55,10 @@ set nrformats=alpha " Increases/Decreases numbers with Ctrl-a/Ctrl-x correctrly
                     " Help from: http://www.slackorama.com/projects/vim/vimrc.html
 set showcmd         " Show what command is being typed at the right corner
 set ruler           " Show the cursor position all the time
-set enc=utf-8       " UTF-8 encoding, by default
+set encoding=utf-8       " UTF-8 encoding, by default
 set modeline        " Load modelines when file opens, i.e.: # vim: set ts=2 :
                     " http://vim.wikia.com/wiki/Modeline_magic
-set relativenumber
+set relativenumber  " Show the relative number from your cursor position
 
 "infinite undos(even once closed file)"
 """""""""""""""""""""""""""""""""""""""""""""""""""
@@ -179,15 +179,25 @@ let g:ale_echo_msg_error_str = 'E'
 let g:ale_echo_msg_warning_str = 'W'
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 let g:ale_lint_on_save = 1
+
+"""""""""""""""""""""""
+" using eslint
 let g:ale_javascript_eslint_use_global = 0
 
-let g:syntastic_ruby_checkers = ["mri", "rubocop"]
+
+" using only standard for lint
+" let g:ale_linters = {
+" \   'javascript': ['standard'],
+" \}
+"""""""""""""""""""""""
+
+let g:syntastic_ruby_checkers = ['mri', 'rubocop']
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 let g:syntastic_mode_map = {
-     \ "mode": "passive",
-     \ "active_filetypes": [],
-     \ "passive_filetypes": [] }
+     \ 'mode': 'passive',
+     \ 'active_filetypes': [],
+     \ 'passive_filetypes': [] }
 
 " Vim Debug {{{
 let g:vdebug_options = {
@@ -220,5 +230,7 @@ highlight javascriptBraces term=bold ctermfg=255 guifg=#eeeeee
 
 highlight javascriptObjectLiteral term=bold ctermfg=183 guifg=#8197bf
 highlight javascriptObjectLabelColon term=bold ctermfg=183 guifg=#8197bf
+highlight javascriptFuncArg term=bold ctermfg=036 guifg=#00af87
+
 
 highlight javascriptExport term=bold ctermfg=103 guifg=#8197bf

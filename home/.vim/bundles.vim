@@ -32,14 +32,17 @@ NeoBundle 'tpope/vim-abolish'             "  For transform words, to uppercase, 
 NeoBundle 'tpope/vim-endwise'             "  If you miss IDE features like block closing
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'tpope/vim-ragtag'
-NeoBundle 'tpope/vim-rails'               "  If you use these plugins correctly you'll never
+NeoBundle 'tpope/vim-rails'
 NeoBundle 'tpope/vim-repeat'
 NeoBundle 'tpope/vim-rsi'                 " readline key binding
 NeoBundle 'tpope/vim-surround'            "  Ease surrounding
 NeoBundle 'tpope/vim-unimpaired'
 NeoBundle 'valloric/youcompleteme', {'build': {'unix': './install.py --tern-completer --clang-completer'}}
+NeoBundle 'marijnh/tern_for_vim', {'for': ['html', 'javascript', 'jsx'], 'do': 'npm install'}
 NeoBundle 'vim-ruby/vim-ruby'             "  look for an IDE again
 NeoBundle 'w0rp/ale'                      " lint check
+NeoBundle 'wavded/vim-stylus'             " highlight for styl
+NeoBundle 'nikvdp/ejs-syntax'             " highlight for ejs
 
 " ColorScheme
 NeoBundle 'csapprox'
