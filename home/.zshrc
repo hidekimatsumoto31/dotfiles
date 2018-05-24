@@ -139,5 +139,11 @@ export FZF_DEFAULT_COMMAND='ag -l -g ""'
 # POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
 # POWERLEVEL9K_MODE='awesome-patched'
 
+local ret_status="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ )"
+PROMPT='${ret_status} %{$fg[cyan]%}%c%{$reset_color%} $(git_prompt_info)'
+RPROMPT="[%*]"
+
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+export PATH="/home/hideki/.local/bin:$PATH"
